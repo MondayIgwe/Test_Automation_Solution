@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test name="Surefire test">
+    <classes>
+      <class name="com.studentapp.cucumber.serenity.StudentSerenitySteps"/>
+      <class name="com.studentapp.testbase.TestBase"/>
+      <class name="com.studentapp.utils.ReusableSpecifications"/>
+      <class name="com.studentapp.utils.TestUtils"/>
+    </classes>
+  </test> <!-- Surefire test -->
+</suite> <!-- Failed suite [Surefire suite] -->

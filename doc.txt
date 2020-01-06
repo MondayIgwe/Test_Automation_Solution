@@ -1,0 +1,7 @@
+###############################################################
+This is a hybrid Test Automation Framework/ Architecture (TAA)
+***************************************************************
+FRONT-END
+MIDDLE WARE
+BACKEND 
+MOBILE
