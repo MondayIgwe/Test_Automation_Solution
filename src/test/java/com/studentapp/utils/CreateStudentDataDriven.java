@@ -19,7 +19,7 @@ import net.thucydides.junit.annotations.UseTestDataFrom;
 public class CreateStudentDataDriven extends TestBase {
 
 	
-	//MEMBER VARIABLES
+	//MEMBER VARIABLES OR FIELDS
 	private String lastName;
 	private String email;
 	private String programm;
@@ -36,7 +36,6 @@ public class CreateStudentDataDriven extends TestBase {
 		steps.createStudent(firstName, lastName, email, programm, courses)
 		.statusCode(201);
 	}
-	
 	
 	
 	private String firstName;
