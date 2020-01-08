@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.junit.BeforeClass;
+import org.testng.annotations.BeforeTest;
 
 import io.restassured.RestAssured;
 
@@ -18,5 +19,12 @@ public class TestBase {
 		prop.load(file);	
 		RestAssured.baseURI = prop.getProperty("ApiUrl");	
 	
+	}
+	
+	@BeforeTest
+	public void init2() throws Exception {
+		FileInputStream inputStream = new FileInputStream(System.getProperty("user.dir")+"/env.properties");
+		prop.load(inputStream);
+		RestAssured.baseURI = prop.getProperty("HOST");
 	}
 }
