@@ -13,6 +13,8 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Manual;
 import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Title;
+import net.thucydides.core.annotations.WithTag;
+import net.thucydides.core.annotations.WithTags;
 
 
 @RunWith(SerenityRunner.class)
@@ -20,7 +22,7 @@ public class FirstSerenityTest extends TestBase{
 
 	
 
-	
+	@WithTag("studentFeature:POSITIVE")
 	@Title("This test will get All Students from the student Api")
 	@Test
 	public void getAllStudents() throws IOException {
@@ -58,20 +60,24 @@ public class FirstSerenityTest extends TestBase{
 		
 	}
 	
-	//@Pending
-	//@Test
+	@WithTag("pending:SMOKE")
+	@Pending
+	@Test
 	public void thisAPendingTest() {
 		
 	}
 	
 	
-	//@Test
+	@WithTag("Ignore:SANITY")
+	@Ignore
+	@Test
 	public void thisAIgnoreTest() {
 		
 	}
 	
 
-	//@Test
+	@WithTag("error:SMOKE")
+	@Test
 	public void thisErrorTest() {
 		int[] arr = {1,2,3,4,5,6,9};
 		
@@ -81,8 +87,12 @@ public class FirstSerenityTest extends TestBase{
 		
 	}
 	
-	//@Manual
-	//@Test
+	@WithTags({
+		@WithTag("error:SMOKE"),@WithTag("Ignore:SANITY")
+	}) //GROUPING TAGS
+	
+	@Manual
+	@Test
 	public void manualTest() {
 		
 	}
