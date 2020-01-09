@@ -2,9 +2,11 @@ package Web_Task2;
 
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+
+import com.serenity.pageObjects.testBaseSeup;
+
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Step;
-import pageObjects.testBaseSeup;
 
 
 @RunWith(SerenityRunner.class)

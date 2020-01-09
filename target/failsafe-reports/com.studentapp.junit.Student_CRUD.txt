@@ -1,4 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: com.studentapp.junit.Student_CRUD
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.204 s - in com.studentapp.junit.Student_CRUD
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 45.25 s <<< FAILURE! - in com.studentapp.junit.Student_CRUD
+createStudent001 on createStudent001(com.studentapp.junit.Student_CRUD)(com.studentapp.junit.Student_CRUD)  Time elapsed: 22.266 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.studentapp.junit.Student_CRUD.createStudent001(Student_CRUD.java:47)
+
+deleteRequest004 on deleteRequest004(com.studentapp.junit.Student_CRUD)(com.studentapp.junit.Student_CRUD)  Time elapsed: 5.189 s  <<< FAILURE!
+java.net.ConnectException: Connection refused: connect
+	at com.studentapp.junit.Student_CRUD.deleteRequest004(Student_CRUD.java:83)
+
+getStudents002 on getStudents002(com.studentapp.junit.Student_CRUD)(com.studentapp.junit.Student_CRUD)  Time elapsed: 4.821 s  <<< FAILURE!
+java.net.ConnectException: Connection refused: connect
+	at com.studentapp.junit.Student_CRUD.getStudents002(Student_CRUD.java:55)
+
+putRequest003 on putRequest003(com.studentapp.junit.Student_CRUD)(com.studentapp.junit.Student_CRUD)  Time elapsed: 4.809 s  <<< FAILURE!
+java.net.ConnectException: Connection refused: connect
+	at com.studentapp.junit.Student_CRUD.putRequest003(Student_CRUD.java:71)
+

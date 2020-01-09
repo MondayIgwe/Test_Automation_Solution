@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="com.studentapp.junit.FirstSerenityTest" skipped="0" tests="1" time="3.34" timestamp="2020-01-07 04:57:03"><testcase classname="com.studentapp.junit.FirstSerenityTest" name="This test will get All Students from the student Api"/></testsuite>

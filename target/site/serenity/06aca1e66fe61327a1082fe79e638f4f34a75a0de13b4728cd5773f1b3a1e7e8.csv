@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Student CRUD","Create a new student POST METHOD","ERROR","2020-01-09T15:33:22.882+02:00[Africa/Harare]","0.0","22.22"
+"Student CRUD","Deleting Newly Created Student Information DELETE METHOD","ERROR","2020-01-09T15:33:46.43+02:00[Africa/Harare]","0.0","5.19"
+"Student CRUD","Get Students GET METHOD","ERROR","2020-01-09T15:33:51.633+02:00[Africa/Harare]","0.0","4.83"
+"Student CRUD","Updating the Student Info POST METHOD","ERROR","2020-01-09T15:33:56.472+02:00[Africa/Harare]","0.0","4.8"

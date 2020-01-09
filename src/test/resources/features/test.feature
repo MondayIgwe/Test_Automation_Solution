@@ -6,10 +6,10 @@ Scenario: Checking for Sanity Testing
 	
 	
 Scenario Outline: Create a new student and verify if it added
-Given I created a new student firstname <firstname> lastname <lastname> email <email> programm <programm>
+Given I created a new student firstname <firstName> lastname <lastName> email <email> programm <programm>
 Then I verify that the student with <email> is created
 
 Examples:
-|firstname|lastname|email|programm|
+|firstName|lastName|email|programm|
 |Mark|john|markJohn@yahoo.com|JavaAcripts|
 	
