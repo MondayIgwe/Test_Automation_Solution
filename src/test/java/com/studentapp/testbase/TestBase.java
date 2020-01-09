@@ -3,10 +3,8 @@ package com.studentapp.testbase;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-
 import org.junit.BeforeClass;
 import org.testng.annotations.BeforeTest;
-
 import io.restassured.RestAssured;
 
 public class TestBase {
@@ -27,4 +25,11 @@ public class TestBase {
 		prop.load(inputStream);
 		RestAssured.baseURI = prop.getProperty("HOST");
 	}
+	
+	
+//    @BeforeTest
+//    public void setPath(){
+//        System.setProperty("webdriver.chrome.driver", "selenium/chromedriver_win32/chromedriver.exe");
+//
+//    }
 }

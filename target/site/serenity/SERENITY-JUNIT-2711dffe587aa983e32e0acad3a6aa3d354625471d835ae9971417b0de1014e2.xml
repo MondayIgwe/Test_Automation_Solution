@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Testing API request" skipped="2" tests="2" time="0.16" timestamp="2020-01-08 07:26:20"><testcase name="Checking for Sanity Testing"><skipped/></testcase><testcase name="Create a new student and verify if it added"><skipped/></testcase></testsuite>

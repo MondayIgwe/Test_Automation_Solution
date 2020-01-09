@@ -6,9 +6,26 @@
   <name>Automation</name>
   <description>Automation All Testing Levels</description>
 	<properties>
+        <!-- Project Configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.0.77</serenity.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        
+        <!-- Plugin Versions -->
+        <surefire.version>2.20.1</surefire.version>
+        <failsafe.version>2.20.1</failsafe.version>
+        <compiler.version>3.7.0</compiler.version>
+        <enforcer.version>3.0.0-M1</enforcer.version>
+        <sonar.version>3.3.0.603</sonar.version>
+
+        <!-- Dependency Versions -->
+        <junit.version>4.12</junit.version>
+        <assertj.version>3.8.0</assertj.version>
+        <slf4j.version>1.7.21</slf4j.version>
+        <serenity.maven.version>1.8.0</serenity.maven.version>
+   		<serenity.version>2.0.77</serenity.version>
         <serenity.cucumber.version>1.9.40</serenity.cucumber.version>
+        <cucumber.jvm.parallel.version>4.2.0</cucumber.jvm.parallel.version>
     </properties>
 
     <repositories>
@@ -95,18 +112,28 @@
             <scope>test</scope>
             <version>3.8.0</version>
      </dependency>
-     <dependency>
+    <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
     	<artifactId>selenium-java</artifactId>
-    	<version>3.8.0</version>
+    	<version>3.141.59</version>
     </dependency> 
+     <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>3.141.59</version>
+    </dependency>
+       <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>3.141.59</version>
+     </dependency>
     <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>1.3</version>
             <scope>test</scope>
     </dependency>
-    <dependency>
+        <dependency>
 	    <groupId>info.cukes</groupId>
 	    <artifactId>cucumber-junit</artifactId>
 	    <version>1.2.3</version>
