@@ -14,10 +14,12 @@
         <!-- Plugin Versions -->
         <surefire.version>2.20.1</surefire.version>
         <failsafe.version>2.20.1</failsafe.version>
-        <compiler.version>3.7.0</compiler.version>
-        <enforcer.version>3.0.0-M1</enforcer.version>
+        <maven.surefire.plugin>2.22.1</maven.surefire.plugin>
+        <maven.compiler.plugin>3.7.0</maven.compiler.plugin>
+        <maven-failsafe-plugin>2.22.1</maven-failsafe-plugin>
+        <enforcer.version>3.0.0M1</enforcer.version>
         <sonar.version>3.3.0.603</sonar.version>
-
+        
         <!-- Dependency Versions -->
         <junit.version>4.12</junit.version>
         <assertj.version>3.8.0</assertj.version>
@@ -26,6 +28,7 @@
    		<serenity.version>2.0.77</serenity.version>
         <serenity.cucumber.version>1.9.40</serenity.cucumber.version>
         <cucumber.jvm.parallel.version>4.2.0</cucumber.jvm.parallel.version>
+        <karate.version>0.9.4</karate.version>
     </properties>
 
     <repositories>
@@ -58,6 +61,133 @@
 			<url>http://dl.bintray.com/serenity/maven</url>
 		</pluginRepository>
     </pluginRepositories>
+
+	<build>
+	    <testResources>
+        	<testResource>
+            	<directory>src/test/java</directory>
+            		<excludes>
+                		<exclude>**/*.java</exclude>
+            		</excludes>
+        	</testResource>
+    	</testResources> 
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin}</version>
+                <configuration>
+                    <skip>true</skip>
+					<!-- Suite testng xml file to consider for test execution -->
+					<!--<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>-->
+					<argLine>-Dfile.encoding=UTF-8</argLine>
+				</configuration>
+            </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin}</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-failsafe-plugin}</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/Test*.java</include>
+                        <include>**/When*.java</include>
+                        <include>**/*Story.java</include>
+                        <include>**/serenityrestassured/*.java</include>
+                        <include>**/studentapp/**/*.java</include>
+						<include>**/studentapp/*.java</include>
+                    </includes>
+                    <forkCount>4</forkCount>
+					<reuseForks>false</reuseForks>
+					<!-- <parallel>methods</parallel> -->
+				 	<!-- <threadCount>10</threadCount> --> 
+					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+                    <argLine>-Xmx512m</argLine>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>net.serenity-bdd.maven.plugins</groupId>
+                <artifactId>serenity-maven-plugin</artifactId>
+                <version>${serenity.version}</version>
+                <dependencies>
+					<dependency>
+						<groupId>net.serenity-bdd</groupId>
+						<artifactId>serenity-core</artifactId>
+						<version>${serenity.version}</version>
+					</dependency>
+				</dependencies>
+                <executions>
+                    <execution>
+                        <id>serenity-reports</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- PROFILES -->
+  <profiles>
+  <profile>
+	  <id>ETE</id>
+	  <!-- BUILD PLUGINS FOR EXECUTING ALL THE TEST CASES -->
+	    <build>
+	    <pluginManagement>
+	      <plugins>
+	        <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-surefire-plugin</artifactId>
+	          <version>3.0.0-M4</version>
+	        	<configuration>
+		          	  <suiteXmlFiles>
+	           	 	<suiteXmlFile>testng.xml</suiteXmlFile>
+	          	  </suiteXmlFiles>
+	        	</configuration>
+	      </plugin>
+	      </plugins>
+	    </pluginManagement>
+	  </build>
+  </profile>
+  <profile>
+  	<id>QA</id>
+  	<build>
+	    <pluginManagement>
+	      <plugins>
+	        <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-surefire-plugin</artifactId>
+	          <version>3.0.0-M4</version>
+	        	<configuration>
+		          	  <suiteXmlFiles>
+	           	 	<suiteXmlFile>testng2.xml</suiteXmlFile>
+	          	  </suiteXmlFiles>
+	        	</configuration>
+	      </plugin>
+	      </plugins>
+	    </pluginManagement>
+	  </build>
+  	</profile>
+  </profiles>
 
     <dependencies>
         <dependency>
@@ -185,123 +315,19 @@
             <artifactId>xml-path</artifactId>
             <version>3.0.2</version>
         </dependency>
-    </dependencies>
+        <dependency>
+		    <groupId>com.intuit.karate</groupId>
+		    <artifactId>karate-apache</artifactId>
+		    <version>${karate.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>com.intuit.karate</groupId>
+		    <artifactId>karate-junit4</artifactId>
+		    <version>${karate.version}</version>
+		    <scope>test</scope>
+		</dependency>
+    	</dependencies>
     
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.1</version>
-                <configuration>
-                    <skip>true</skip>
-					<!-- Suite testng xml file to consider for test execution -->
-					<!--<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>-->
-				</configuration>
-            </plugin>
-            <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.1</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/Test*.java</include>
-                        <include>**/When*.java</include>
-                        <include>**/*Story.java</include>
-                        <include>**/serenityrestassured/*.java</include>
-                        <include>**/studentapp/**/*.java</include>
-						<include>**/studentapp/*.java</include>
-                    </includes>
-                    <forkCount>4</forkCount>
-					<reuseForks>false</reuseForks>
-					<!-- <parallel>methods</parallel> -->
-				 	<!-- <threadCount>10</threadCount> --> 
-					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
-                    <argLine>-Xmx512m</argLine>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>net.serenity-bdd.maven.plugins</groupId>
-                <artifactId>serenity-maven-plugin</artifactId>
-                <version>${serenity.version}</version>
-                <dependencies>
-					<dependency>
-						<groupId>net.serenity-bdd</groupId>
-						<artifactId>serenity-core</artifactId>
-						<version>${serenity.version}</version>
-					</dependency>
-				</dependencies>
-                <executions>
-                    <execution>
-                        <id>serenity-reports</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>aggregate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-    <!-- PROFILES -->
-  <profiles>
-  <profile>
-	  <id>ETE</id>
-	  <!-- BUILD PLUGINS FOR EXECUTING ALL THE TEST CASES -->
-	    <build>
-	    <pluginManagement>
-	      <plugins>
-	        <plugin>
-	          <groupId>org.apache.maven.plugins</groupId>
-	          <artifactId>maven-surefire-plugin</artifactId>
-	          <version>3.0.0-M4</version>
-	        	<configuration>
-		          	  <suiteXmlFiles>
-	           	 	<suiteXmlFile>testng.xml</suiteXmlFile>
-	          	  </suiteXmlFiles>
-	        	</configuration>
-	      </plugin>
-	      </plugins>
-	    </pluginManagement>
-	  </build>
-  </profile>
-  <profile>
-  	<id>QA</id>
-  	<build>
-	    <pluginManagement>
-	      <plugins>
-	        <plugin>
-	          <groupId>org.apache.maven.plugins</groupId>
-	          <artifactId>maven-surefire-plugin</artifactId>
-	          <version>3.0.0-M4</version>
-	        	<configuration>
-		          	  <suiteXmlFiles>
-	           	 	<suiteXmlFile>testng2.xml</suiteXmlFile>
-	          	  </suiteXmlFiles>
-	        	</configuration>
-	      </plugin>
-	      </plugins>
-	    </pluginManagement>
-	  </build>
-  	</profile>
-  </profiles>
+    
 </project>

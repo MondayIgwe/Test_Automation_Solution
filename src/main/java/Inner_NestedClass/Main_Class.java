@@ -13,15 +13,15 @@ public class Main_Class {
 		new Main_Class().print_Interface();
 		
 }
+	
 
-	public int callInterface() throws Exception {
-		DemoInterface d = null;
-		return d.getScore(33);
+	public void callInterface() throws Exception {
+				
+				System.out.println(DemoInterface.getScore(265));
 	}
 	
 	
 	public void print_Interface() throws Exception {
-		Object cObject = callInterface();
-		System.out.println(cObject);
+		callInterface();
 	}
 }

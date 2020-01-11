@@ -1,0 +1,17 @@
+[
+  {"name": "AutomationExecution",
+  "course": "java",
+  "school":"unisa",
+  "location": "johannesburg"
+},
+  {"name": "programming",
+    "course": "c#",
+    "school":"unilag",
+    "location": "lagos"
+  },
+  {"name": "jazz",
+    "course": "music",
+    "school":"tut",
+    "location": "pretoria"
+  }
+]

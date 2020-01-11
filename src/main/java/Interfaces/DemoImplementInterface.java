@@ -32,7 +32,6 @@ public class DemoImplementInterface implements DemoInterface, MultipleInterfaces
 	 
 	@Override
 	public void eat() {
-	
 		
 	}
 
@@ -43,7 +42,6 @@ public class DemoImplementInterface implements DemoInterface, MultipleInterfaces
 		return 0;
 	}
 
-	@Override
 	public int getScore(int score) {
 		return this.score=score;
 	}

@@ -1,3 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Testing API request","Checking for Sanity Testing","ERROR","2020-01-09T15:33:20.403+02:00[Africa/Harare]","0.0","11.17"
-"Testing API request","Create a new student and verify if it added","ERROR","2020-01-09T15:33:34.388+02:00[Africa/Harare]","0.0","0.1"

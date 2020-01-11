@@ -14,6 +14,9 @@ public interface DemoInterface extends MultipleInterfaces_1, MultipleInterfaces_
 	
 	//implicit or indirect abstract methods
 	public int getScore();
-	public int getScore(final int score);
+	public static int getScore(final int score) {
+		// TODO Auto-generated method stub
+		return score;
+	}
 
 }
