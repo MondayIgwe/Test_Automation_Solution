@@ -1,12 +1,14 @@
 package Inner_NestedClass;
 
+import org.omg.CORBA.PRIVATE_MEMBER;
+
 import Interfaces.DemoInterface;
 
 public class Main_Class {
 
 	public static void main(String[] args) throws Exception{
 		 
-		NestedClasses outerClass = new NestedClasses();
+		 NestedClasses outerClass = new NestedClasses();
 		outerClass.print();
 		outerClass.my_Method();
 		

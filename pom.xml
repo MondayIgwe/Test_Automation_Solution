@@ -29,6 +29,7 @@
         <serenity.cucumber.version>1.9.40</serenity.cucumber.version>
         <cucumber.jvm.parallel.version>4.2.0</cucumber.jvm.parallel.version>
         <karate.version>0.9.4</karate.version>
+        <appium.version>7.0.0</appium.version>
     </properties>
 
     <repositories>
@@ -284,6 +285,12 @@
 	    <artifactId>selenium-server</artifactId>
 	    <version>3.2.0</version>
     </dependency>
+    <dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>${appium.version}</version>
+</dependency>
+    
  	  <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-junit</artifactId>

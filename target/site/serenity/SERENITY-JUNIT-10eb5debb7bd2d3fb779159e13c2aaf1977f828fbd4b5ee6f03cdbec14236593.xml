@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="com.appium_Project.TestCase" skipped="0" tests="1" time="38.03" timestamp="2020-01-24 04:34:17"><testcase classname="com.appium_Project.TestCase" name="Appium execution"><error message="The following error occurred: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'MONDAYPC', ip: '192.168.24.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'&#10;Driver info: io.appium.java_client.android.AndroidDriver&#10;Capabilities {app: C:\Users\groov\eclipse\Auto..., appPackage: io.appium.android.apis, databaseEnabled: false, desired: {app: C:\Users\groov\eclipse\Auto..., deviceName: Android Device, platformName: android}, deviceApiLevel: 26, deviceManufacturer: HUAWEI, deviceModel: PRA-LX1, deviceName: 57U7N17B07006400, deviceScreenDensity: 480, deviceScreenSize: 1080x1920, deviceUDID: 57U7N17B07006400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 3, platform: LINUX, platformName: Android, platformVersion: 8.0.0, statBarHeight: 72, takesScreenshot: true, viewportRect: {height: 1722, left: 0, top: 72, width: 1080}, warnings: {}, webStorageEnabled: false}&#10;Session ID: 673b17f6-b899-46a3-a500-9ec00f194ed5" type="org.openqa.selenium.WebDriverException">The following error occurred: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'MONDAYPC', ip: '192.168.24.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: C:\Users\groov\eclipse\Auto..., appPackage: io.appium.android.apis, databaseEnabled: false, desired: {app: C:\Users\groov\eclipse\Auto..., deviceName: Android Device, platformName: android}, deviceApiLevel: 26, deviceManufacturer: HUAWEI, deviceModel: PRA-LX1, deviceName: 57U7N17B07006400, deviceScreenDensity: 480, deviceScreenSize: 1080x1920, deviceUDID: 57U7N17B07006400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 3, platform: LINUX, platformName: Android, platformVersion: 8.0.0, statBarHeight: 72, takesScreenshot: true, viewportRect: {height: 1722, left: 0, top: 72, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 673b17f6-b899-46a3-a500-9ec00f194ed5</error><system-err>The following error occurred: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'MONDAYPC', ip: '192.168.24.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: C:\Users\groov\eclipse\Auto..., appPackage: io.appium.android.apis, databaseEnabled: false, desired: {app: C:\Users\groov\eclipse\Auto..., deviceName: Android Device, platformName: android}, deviceApiLevel: 26, deviceManufacturer: HUAWEI, deviceModel: PRA-LX1, deviceName: 57U7N17B07006400, deviceScreenDensity: 480, deviceScreenSize: 1080x1920, deviceUDID: 57U7N17B07006400, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 3, platform: LINUX, platformName: Android, platformVersion: 8.0.0, statBarHeight: 72, takesScreenshot: true, viewportRect: {height: 1722, left: 0, top: 72, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 673b17f6-b899-46a3-a500-9ec00f194ed5&#13;
+io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)&#13;
+io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)&#13;
+io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)&#13;
+io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)&#13;
+io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)&#13;
+io.appium.java_client.MobileElement.execute(MobileElement.java:1)&#13;
+io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)&#13;
+com.appium_Project.TestCase.appium_Execution(TestCase.java:33)&#13;
+org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)&#13;
+org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)&#13;
+</system-err></testcase></testsuite>
